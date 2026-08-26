@@ -1,0 +1,1287 @@
+/* =========================================================
+   VÔLEI NEWS
+   CSS PRINCIPAL
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --blue: #0757d5;
+    --blue-dark: #062d6e;
+    --blue-light: #eaf2ff;
+
+    --orange: #ff7600;
+    --orange-dark: #df5e00;
+
+    --green: #18a878;
+
+    --dark: #101722;
+    --dark-2: #172231;
+
+    --white: #ffffff;
+
+    --gray: #697587;
+    --gray-light: #f2f5f8;
+    --border: #e1e6ed;
+
+    --radius: 16px;
+
+    --shadow:
+        0 15px 45px rgba(15, 31, 55, .10);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background: var(--gray-light);
+    color: var(--dark);
+    line-height: 1.6;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.container {
+    width: min(1180px, calc(100% - 40px));
+    margin: auto;
+}
+
+.section {
+    padding: 90px 0;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(255,255,255,.97);
+    border-bottom: 1px solid var(--border);
+
+    backdrop-filter: blur(12px);
+}
+
+.header-content {
+    min-height: 78px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-family: "Oswald", sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.logo > span:last-child > span {
+    color: var(--blue);
+}
+
+.logo-ball {
+    width: 36px;
+    height: 36px;
+
+    display: grid;
+    place-items: center;
+
+    background: var(--blue);
+    border-radius: 50%;
+
+    font-size: 18px;
+}
+
+.navbar {
+    display: flex;
+    gap: 22px;
+}
+
+.navbar a {
+    position: relative;
+
+    color: #4f5c6c;
+    font-size: .75rem;
+    font-weight: 700;
+
+    transition: .25s;
+}
+
+.navbar a:hover {
+    color: var(--blue);
+}
+
+.navbar a::after {
+    content: "";
+
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--orange);
+
+    transition: .25s;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+.header-button {
+    padding: 12px 18px;
+
+    background: var(--orange);
+    color: white;
+
+    border-radius: 7px;
+
+    font-size: .72rem;
+    font-weight: 800;
+
+    transition: .25s;
+}
+
+.header-button:hover {
+    background: var(--orange-dark);
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    min-height: 650px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    background:
+        url("https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?auto=format&fit=crop&w=1900&q=85")
+        center / cover no-repeat;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3,17,40,.96),
+            rgba(3,17,40,.72),
+            rgba(3,17,40,.20)
+        );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    color: white;
+}
+
+.category-tag {
+    display: inline-block;
+
+    margin-bottom: 20px;
+    padding: 8px 12px;
+
+    border-left: 3px solid var(--orange);
+    background: rgba(255,255,255,.08);
+
+    font-size: .7rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.hero h1 {
+    max-width: 800px;
+
+    margin-bottom: 20px;
+
+    font-family: "Oswald", sans-serif;
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    line-height: .98;
+
+    text-transform: uppercase;
+}
+
+.hero h1 strong {
+    display: block;
+    color: var(--orange);
+}
+
+.hero p {
+    max-width: 650px;
+
+    margin-bottom: 30px;
+
+    color: #d6dfeb;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.btn {
+    min-height: 48px;
+
+    padding: 0 22px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 7px;
+
+    font-size: .75rem;
+    font-weight: 800;
+
+    transition: .25s;
+}
+
+.btn-primary {
+    background: var(--orange);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--orange-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255,118,0,.3);
+}
+
+.btn-outline {
+    border: 1px solid rgba(255,255,255,.5);
+    background: rgba(255,255,255,.05);
+    color: white;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: var(--dark);
+}
+
+
+/* =========================================================
+   TÍTULOS
+========================================================= */
+
+.section-heading {
+    margin-bottom: 45px;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.section-label {
+    display: inline-block;
+
+    margin-bottom: 10px;
+
+    color: var(--orange);
+
+    font-size: .72rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.section-heading h2,
+.rules-intro h2,
+.comments-intro h2 {
+    font-family: "Oswald", sans-serif;
+    font-size: clamp(2rem,4vw,3rem);
+    line-height: 1.05;
+    text-transform: uppercase;
+}
+
+.section-description {
+    max-width: 350px;
+    color: var(--gray);
+}
+
+
+/* =========================================================
+   NOTÍCIAS
+========================================================= */
+
+#noticias {
+    background: white;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 24px;
+}
+
+.news-card {
+    overflow: hidden;
+
+    background: white;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+
+    transition: .3s;
+}
+
+.news-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow);
+}
+
+.news-image {
+    height: 230px;
+    position: relative;
+    overflow: hidden;
+}
+
+.news-image img {
+    height: 100%;
+    object-fit: cover;
+
+    transition: .5s;
+}
+
+.news-card:hover .news-image img {
+    transform: scale(1.06);
+}
+
+.news-image span {
+    position: absolute;
+
+    left: 15px;
+    bottom: 15px;
+
+    padding: 7px 10px;
+
+    background: var(--orange);
+    color: white;
+
+    font-size: .62rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.news-info {
+    padding: 25px;
+}
+
+.news-info small {
+    color: #8995a5;
+    font-size: .65rem;
+    font-weight: 700;
+}
+
+.news-info h3 {
+    margin: 10px 0;
+
+    font-family: "Oswald", sans-serif;
+    font-size: 1.4rem;
+    line-height: 1.15;
+
+    text-transform: uppercase;
+}
+
+.news-info p {
+    margin-bottom: 18px;
+
+    color: var(--gray);
+    font-size: .82rem;
+}
+
+.news-info a {
+    color: var(--blue);
+    font-size: .75rem;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   CAMPEONATOS
+========================================================= */
+
+.championships {
+    background:
+        linear-gradient(
+            135deg,
+            #071b3c,
+            #063c8f
+        );
+
+    color: white;
+}
+
+.section-heading.light h2 {
+    color: white;
+}
+
+.championship-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 18px;
+}
+
+.championship-card {
+    min-height: 250px;
+
+    padding: 28px;
+
+    background: rgba(255,255,255,.07);
+
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: var(--radius);
+
+    transition: .3s;
+}
+
+.championship-card:hover {
+    transform: translateY(-6px);
+    background: rgba(255,255,255,.12);
+}
+
+.championship-icon {
+    margin-bottom: 18px;
+    font-size: 2.2rem;
+}
+
+.championship-card h3 {
+    margin-bottom: 10px;
+
+    font-family: "Oswald", sans-serif;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+.championship-card p {
+    margin-bottom: 20px;
+
+    color: #c8d4e4;
+    font-size: .8rem;
+}
+
+.championship-card a {
+    color: var(--orange);
+    font-size: .72rem;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   JOGADORES
+========================================================= */
+
+#jogadores {
+    background: white;
+}
+
+.players-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 24px;
+}
+
+.player-card {
+    min-height: 390px;
+
+    position: relative;
+    overflow: hidden;
+
+    border-radius: var(--radius);
+
+    background: var(--dark);
+}
+
+.player-card > img {
+    height: 390px;
+    object-fit: cover;
+
+    transition: .5s;
+}
+
+.player-card:hover img {
+    transform: scale(1.06);
+}
+
+.player-content {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    padding: 25px;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(3,10,20,.95)
+        );
+
+    color: white;
+}
+
+.player-content span {
+    color: var(--orange);
+
+    font-size: .65rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.player-content h3 {
+    margin: 5px 0;
+
+    font-family: "Oswald", sans-serif;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+.player-content p {
+    color: #d0dae7;
+    font-size: .8rem;
+}
+
+
+/* =========================================================
+   REGRAS
+========================================================= */
+
+.rules-section {
+    background: #eef3f8;
+}
+
+.rules-layout {
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    gap: 80px;
+}
+
+.rules-intro h2 {
+    margin-bottom: 20px;
+}
+
+.rules-intro p {
+    color: var(--gray);
+}
+
+.rules-list {
+    border-top: 1px solid var(--border);
+}
+
+.rules-list details {
+    border-bottom: 1px solid var(--border);
+}
+
+.rules-list summary {
+    padding: 23px 0;
+
+    display: flex;
+    gap: 20px;
+    align-items: center;
+
+    cursor: pointer;
+    list-style: none;
+
+    font-family: "Oswald", sans-serif;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+.rules-list summary::-webkit-details-marker {
+    display: none;
+}
+
+.rules-list summary span {
+    color: var(--orange);
+
+    font-family: "Montserrat", sans-serif;
+    font-size: .7rem;
+    font-weight: 800;
+}
+
+.rules-list details p {
+    padding: 0 0 24px 45px;
+
+    color: var(--gray);
+    font-size: .82rem;
+}
+
+
+/* =========================================================
+   DICAS
+========================================================= */
+
+#dicas {
+    background: white;
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+}
+
+.tip-card {
+    position: relative;
+    overflow: hidden;
+
+    min-height: 300px;
+
+    padding: 30px;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+
+    transition: .3s;
+}
+
+.tip-card:hover {
+    border-color: var(--blue);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+.tip-number {
+    position: absolute;
+    top: 12px;
+    right: 18px;
+
+    color: #e8edf4;
+
+    font-family: "Oswald", sans-serif;
+    font-size: 3rem;
+}
+
+.tip-icon {
+    margin: 25px 0 15px;
+
+    font-size: 2rem;
+}
+
+.tip-card h3 {
+    margin-bottom: 12px;
+
+    font-family: "Oswald", sans-serif;
+    font-size: 1.45rem;
+    text-transform: uppercase;
+}
+
+.tip-card p {
+    color: var(--gray);
+    font-size: .8rem;
+}
+
+
+/* =========================================================
+   CURIOSIDADES
+========================================================= */
+
+.facts {
+    padding: 80px 0;
+
+    background: var(--orange);
+    color: white;
+}
+
+.facts h2 {
+    margin-bottom: 30px;
+
+    font-family: "Oswald", sans-serif;
+    font-size: 3rem;
+    text-transform: uppercase;
+}
+
+.facts .section-label {
+    color: white;
+}
+
+.facts-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+
+.fact {
+    min-height: 160px;
+
+    padding: 25px;
+
+    border: 1px solid rgba(255,255,255,.3);
+    border-radius: 12px;
+
+    background: rgba(255,255,255,.08);
+}
+
+.fact strong {
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-size: 2rem;
+}
+
+.fact p {
+    font-size: .82rem;
+}
+
+
+/* =========================================================
+   COMENTÁRIOS / OPINIÕES
+========================================================= */
+
+.comments-section {
+    background: #f5f7fa;
+}
+
+.comments-layout {
+    display: grid;
+    grid-template-columns: .7fr 1.3fr;
+    gap: 70px;
+    align-items: start;
+}
+
+.comments-intro {
+    position: sticky;
+    top: 110px;
+}
+
+.comments-intro h2 {
+    margin-bottom: 20px;
+}
+
+.comments-intro > p {
+    color: var(--gray);
+    font-size: .9rem;
+}
+
+.comment-stats {
+    display: flex;
+    gap: 35px;
+
+    margin-top: 35px;
+}
+
+.comment-stats div {
+    display: flex;
+    flex-direction: column;
+}
+
+.comment-stats strong {
+    color: var(--blue);
+
+    font-family: "Oswald", sans-serif;
+    font-size: 2rem;
+}
+
+.comment-stats span {
+    color: var(--gray);
+    font-size: .7rem;
+    font-weight: 600;
+}
+
+.comment-area {
+    padding: 35px;
+
+    background: white;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+}
+
+.comment-area > h3,
+.published-comments > h3 {
+    margin-bottom: 25px;
+
+    font-family: "Oswald", sans-serif;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+
+/* ---------- FORMULÁRIO ---------- */
+
+.comment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.input-group label {
+    color: #4b5767;
+
+    font-size: .72rem;
+    font-weight: 800;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border: 1px solid var(--border);
+    border-radius: 7px;
+
+    outline: none;
+
+    background: #fafbfd;
+    color: var(--dark);
+
+    transition: .2s;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    border-color: var(--blue);
+    background: white;
+    box-shadow: 0 0 0 3px rgba(7,87,213,.08);
+}
+
+.input-group textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+.comment-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.check-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    color: var(--gray);
+
+    font-size: .68rem;
+}
+
+.check-label input {
+    accent-color: var(--blue);
+}
+
+
+/* =========================================================
+   COMENTÁRIOS PUBLICADOS
+========================================================= */
+
+.published-comments {
+    margin-top: 50px;
+    padding-top: 35px;
+
+    border-top: 1px solid var(--border);
+}
+
+.comment {
+    display: flex;
+    gap: 15px;
+
+    padding: 22px 0;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.avatar {
+    width: 45px;
+    height: 45px;
+    flex-shrink: 0;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: var(--blue);
+    color: white;
+
+    font-size: .72rem;
+    font-weight: 800;
+}
+
+.avatar.orange {
+    background: var(--orange);
+}
+
+.avatar.green {
+    background: var(--green);
+}
+
+.comment-body {
+    flex: 1;
+}
+
+.comment-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-bottom: 6px;
+}
+
+.comment-header strong {
+    font-size: .82rem;
+}
+
+.comment-header span {
+    color: #9aa4b2;
+    font-size: .65rem;
+}
+
+.comment-body p {
+    margin-bottom: 8px;
+
+    color: var(--gray);
+    font-size: .78rem;
+}
+
+.comment-body button {
+    padding: 0;
+
+    border: none;
+    background: transparent;
+
+    color: var(--blue);
+
+    font-size: .68rem;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   NEWSLETTER
+========================================================= */
+
+.newsletter {
+    padding: 70px 0;
+
+    background: var(--dark);
+    color: white;
+}
+
+.newsletter-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.newsletter h2 {
+    margin-bottom: 8px;
+
+    font-family: "Oswald", sans-serif;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+}
+
+.newsletter p {
+    color: #aab5c4;
+}
+
+.newsletter-form {
+    width: min(480px,100%);
+
+    display: flex;
+    gap: 8px;
+}
+
+.newsletter-form input {
+    flex: 1;
+    min-width: 0;
+
+    padding: 0 16px;
+
+    border: 1px solid #344153;
+    border-radius: 7px;
+
+    outline: none;
+
+    background: #1b2635;
+    color: white;
+}
+
+.newsletter-form input::placeholder {
+    color: #8793a3;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+    background: #090f17;
+    color: white;
+}
+
+.footer-content {
+    padding: 60px 0;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.footer-brand p {
+    margin-top: 15px;
+
+    color: #7d8999;
+    font-size: .78rem;
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(3,150px);
+    gap: 35px;
+}
+
+.footer-links h4 {
+    margin-bottom: 15px;
+
+    font-size: .75rem;
+    text-transform: uppercase;
+}
+
+.footer-links a {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #7d8999;
+    font-size: .7rem;
+
+    transition: .2s;
+}
+
+.footer-links a:hover {
+    color: var(--orange);
+}
+
+.footer-bottom {
+    border-top: 1px solid #202a37;
+}
+
+.footer-bottom .container {
+    min-height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    color: #687586;
+
+    font-size: .65rem;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .navbar {
+        gap: 12px;
+    }
+
+    .navbar a {
+        font-size: .67rem;
+    }
+
+    .header-button {
+        display: none;
+    }
+
+    .championship-grid,
+    .tips-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .comments-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .comments-intro {
+        position: static;
+    }
+}
+
+
+@media (max-width: 800px) {
+
+    .container {
+        width: min(100% - 30px,650px);
+    }
+
+    .section {
+        padding: 65px 0;
+    }
+
+    .navbar {
+        display: none;
+    }
+
+    .hero {
+        min-height: 580px;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.8rem,12vw,4.5rem);
+    }
+
+    .section-heading {
+        display: block;
+    }
+
+    .section-description {
+        margin-top: 12px;
+    }
+
+    .news-grid,
+    .players-grid,
+    .facts-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .rules-layout {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .newsletter-content {
+        display: block;
+    }
+
+    .newsletter-form {
+        margin-top: 25px;
+    }
+
+    .footer-content {
+        display: block;
+    }
+
+    .footer-links {
+        margin-top: 40px;
+    }
+}
+
+
+@media (max-width: 550px) {
+
+    .container {
+        width: min(100% - 24px,500px);
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .championship-grid,
+    .tips-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .comment-area {
+        padding: 22px;
+    }
+
+    .comment-bottom {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+    }
+
+    .newsletter-form input {
+        height: 50px;
+    }
+
+    .footer-links {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-bottom .container {
+        min-height: auto;
+
+        padding: 20px 0;
+
+        flex-direction: column;
+        gap: 8px;
+
+        text-align: center;
+    }
+}
